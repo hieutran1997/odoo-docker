@@ -77,3 +77,4 @@ rotate_backups_s3
 fitz==0.0.1.dev2
 pymupdf == 1.18.15
 jwcrypto==0.5.0
+unidecode

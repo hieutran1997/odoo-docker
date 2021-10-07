@@ -6,9 +6,9 @@ SHELL ["/bin/bash", "-xo", "pipefail", "-c"]
 # Generate locale C.UTF-8 for postgres and general locale data
 ENV LANG C.UTF-8
 
-COPY ./jdk-16.0.1 /odoo/jdk
-
-ENV JAVA_HOME /odoo/jdk
+RUN wget --no-cookies --no-check-certificate --header "Cookie: oraclelicense=accept-securebackup-cookie" https://javadl.oracle.com/webapps/download/GetFile/1.8.0_281-b09/89d678f2be164786b292527658ca1605/linux-i586/jdk-8u281-linux-x64.tar.gz \
+	tar -xvf ./jdk-8u281-linux-x64.tar.gz \
+	JAVA_HOME `pwd`/jdk1.8.0_281
 
 ENV PATH=.:$JAVA_HOME/bin:$JAVA_HOME/jre/bin:$PATH
 

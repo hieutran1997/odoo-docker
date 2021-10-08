@@ -6,11 +6,17 @@ SHELL ["/bin/bash", "-xo", "pipefail", "-c"]
 # Generate locale C.UTF-8 for postgres and general locale data
 ENV LANG C.UTF-8
 
-RUN wget --no-cookies --no-check-certificate --header "Cookie: oraclelicense=accept-securebackup-cookie" https://javadl.oracle.com/webapps/download/GetFile/1.8.0_281-b09/89d678f2be164786b292527658ca1605/linux-i586/jdk-8u281-linux-x64.tar.gz \
-	tar -xvf ./jdk-8u281-linux-x64.tar.gz \
-	JAVA_HOME `pwd`/jdk1.8.0_281
+COPY ./jdk-8u301-linux-x64.tar.gz /jdk-8u301-linux-x64.tar.gz
+
+RUN tar -xvzf /jdk-8u301-linux-x64.tar.gz 
+
+RUN chmod +x /jdk1.8.0_301/bin/java
+
+ENV JAVA_HOME /jdk1.8.0_301
 
 ENV PATH=.:$JAVA_HOME/bin:$JAVA_HOME/jre/bin:$PATH
+
+RUN export JAVA_HOME
 
 # Install some deps, lessc and less-plugin-clean-css, and wkhtmltopdf
 RUN DEBIAN_FRONTEND=noninteractive apt-get update && \

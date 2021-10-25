@@ -79,3 +79,4 @@ pymupdf == 1.18.15
 jwcrypto==0.5.0
 unidecode
 bs4
+pygments

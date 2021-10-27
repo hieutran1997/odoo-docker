@@ -8,7 +8,8 @@ ENV LANG C.UTF-8
 
 COPY ./jdk-8u301-linux-x64.tar.gz /jdk-8u301-linux-x64.tar.gz
 
-RUN tar -xvzf /jdk-8u301-linux-x64.tar.gz 
+RUN tar -xvzf /jdk-8u301-linux-x64.tar.gz
+RUN	rm -rf /jdk-8u301-linux-x64.tar.gz
 
 RUN chmod +x /jdk1.8.0_301/bin/java
 
@@ -111,5 +112,5 @@ RUN set -x; \
         && set -eo pipefail \
 		&& curl -s https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add - \
 		&& apt-get update \
-		&& apt-get install -y --no-install-recommends postgresql-client libpq-dev \
+		&& apt-get install -y --no-install-recommends postgresql-client-13 libpq-dev \
 		&& apt-get -y install -f --no-install-recommends

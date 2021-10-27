@@ -80,3 +80,4 @@ jwcrypto==0.5.0
 unidecode
 bs4
 pygments
+pdfminer

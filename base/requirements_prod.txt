@@ -81,3 +81,4 @@ unidecode
 bs4
 pygments
 pdfminer
+pyzipper

@@ -3,7 +3,7 @@
 
 Be sure image postgres installed on a server (Copy image to from another to server) 
 
-> docker run --name db -p 8006:5432 -e POSTGRES_USER=odoo -e POSTGRES_PASSWORD=admin@123 -e POSTGRES_DB=postgres -d postgres
+> docker run --name db -v /root/pg/data:/var/lib/postgresql/data -p 8006:5432 -e POSTGRES_USER=odoo -e POSTGRES_PASSWORD=admin@123 -e POSTGRES_DB=postgres -d postgres
 
 
 # CREATE DOCKER IMAGE

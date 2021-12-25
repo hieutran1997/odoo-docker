@@ -58,7 +58,7 @@ python-jose==3.2.0
 pyjwt==2.1.0
 simplejson==3.17.2
 python-logstash==0.4.6
-boto3
+boto3==1.19.11
 python-docx
 openpyxl
 kubernetes
@@ -81,4 +81,9 @@ unidecode
 bs4
 pygments
 pdfminer
-pyzipper
+google-api-python-client
+google-auth-httplib2
+google-auth-oauthlib
+elasticsearch==7.16.1
+pyshorteners==1.0.1
+unoconv==0.9.0
